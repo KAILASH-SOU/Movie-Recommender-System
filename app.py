@@ -1,3 +1,5 @@
+
+
 import pickle
 import streamlit as st
 import gdown
@@ -7,6 +9,7 @@ import os
 movie_url = 'https://drive.google.com/file/d/1-D0Xe33hJgFUWRn6mKFUTelaXv57Pscf/view?usp=sharing'
 similarity_url = 'https://drive.google.com/file/d/194CMNVqbv8t-hzxgkOK3qRg4tV69mTbk/view?usp=drive_link'
 
+# ========== Download Pickle Files if Not Present ==========
 if not os.path.exists('movie_list.pkl'):
     gdown.download(movie_url, 'movie_list.pkl', quiet=False)
 
@@ -41,3 +44,4 @@ if st.button('Show Recommendations'):
     st.subheader("Recommended Movies:")
     for i, name in enumerate(recommended_names, start=1):
         st.write(f"{i}. {name}")
+
