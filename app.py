@@ -2,17 +2,17 @@ import pickle
 import streamlit as st
 import gdown
 import os
-
-# ========== Google Drive Direct Download URLs ==========
-movie_url = 'https://drive.google.com/uc?id=1-D0Xe33hJgFUWRn6mKFUTelaXv57Pscf'
-similarity_url = 'https://drive.google.com/uc?id=194CMNVqbv8t-hzxgkOK3qRg4tV69mTbk'
+# ========== Google Drive File IDs ==========
+movie_file_id = '1-D0Xe33hJgFUWRn6mKFUTelaXv57Pscf'
+similarity_file_id = '194CMNVqbv8t-hzxgkOK3qRg4tV69mTbk'
 
 # ========== Download Pickle Files if Not Present ==========
 if not os.path.exists('movie_list.pkl'):
-    gdown.download(movie_url, 'movie_list.pkl', quiet=False)
+    gdown.download(f'https://drive.google.com/uc?id={movie_file_id}', 'movie_list.pkl', quiet=False)
 
 if not os.path.exists('similarity.pkl'):
-    gdown.download(similarity_url, 'similarity.pkl', quiet=False)
+    gdown.download(f'https://drive.google.com/uc?id={similarity_file_id}', 'similarity.pkl', quiet=False)
+
 
 # ========== Load Pickle Files ==========
 movies = pickle.load(open('movie_list.pkl', 'rb'))
