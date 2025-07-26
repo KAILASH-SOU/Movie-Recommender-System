@@ -1,5 +1,21 @@
 import pickle
 import streamlit as st
+import gdown
+import os
+
+# ========== Download Pickle Files if Not Exists ==========
+movie_url = 'https://drive.google.com/file/d/1-D0Xe33hJgFUWRn6mKFUTelaXv57Pscf/view?usp=sharing'
+similarity_url = 'https://drive.google.com/file/d/194CMNVqbv8t-hzxgkOK3qRg4tV69mTbk/view?usp=drive_link'
+
+if not os.path.exists('movie_list.pkl'):
+    gdown.download(movie_url, 'movie_list.pkl', quiet=False)
+
+if not os.path.exists('similarity.pkl'):
+    gdown.download(similarity_url, 'similarity.pkl', quiet=False)
+
+# ========== Load Models ==========
+movies = pickle.load(open('movie_list.pkl', 'rb'))
+similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 # ========== Recommendation Logic ==========
 def recommend(movie):
@@ -11,10 +27,6 @@ def recommend(movie):
         recommended_movie_names.append(movies.iloc[i[0]].title)
 
     return recommended_movie_names
-
-# ========== Load Models ==========
-movies = pickle.load(open('movie_list.pkl', 'rb'))
-similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 # ========== Streamlit UI ==========
 st.set_page_config(page_title="Movie Recommender", layout="centered")
