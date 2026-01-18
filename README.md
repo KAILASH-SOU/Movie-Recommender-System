@@ -21,12 +21,12 @@ flowchart TD
     DVC --> ProcessedData
     ProcessedData --> Model
 
-    %% Colors
-    style User fill:#FF9999,stroke:#333,stroke-width:2px
-    style Streamlit fill:#99FF99,stroke:#333,stroke-width:2px
-    style Engine fill:#99FFFF,stroke:#333,stroke-width:2px
-    style Model fill:#9999FF,stroke:#333,stroke-width:2px
-    style RawData fill:#FFCC99,stroke:#333,stroke-width:2px
-    style DVC fill:#FFFF99,stroke:#333,stroke-width:4px
-    style ProcessedData fill:#E5CCFF,stroke:#333,stroke-width:2px
+    %% High-Contrast Styling (Black Text for Visibility)
+    style User fill:#FF9999,stroke:#333,stroke-width:2px,color:#000
+    style Streamlit fill:#99FF99,stroke:#333,stroke-width:2px,color:#000
+    style Engine fill:#99FFFF,stroke:#333,stroke-width:2px,color:#000
+    style Model fill:#9999FF,stroke:#333,stroke-width:2px,color:#000
+    style RawData fill:#FFCC99,stroke:#333,stroke-width:2px,color:#000
+    style DVC fill:#FFFF99,stroke:#333,stroke-width:4px,color:#000
+    style ProcessedData fill:#E5CCFF,stroke:#333,stroke-width:2px,color:#000
 
