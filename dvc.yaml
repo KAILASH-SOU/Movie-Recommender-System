@@ -1,0 +1,16 @@
+stages:
+  ingest:
+    cmd: python src/data/ingest.py
+    deps:
+      - src/data/ingest.py
+      - data/raw/tmdb_5000_movies.csv
+      - data/raw/tmdb_5000_credits.csv
+
+  preprocess:
+    cmd: python src/data/preprocess.py
+    deps:
+      - src/data/preprocess.py
+      - data/raw/tmdb_5000_movies.csv
+      - data/raw/tmdb_5000_credits.csv
+    outs:
+      - data/processed/movies_cleaned.csv
