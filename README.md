@@ -1,6 +1,6 @@
 
 
-
+App Link -> https://kailash-sou-movie-recommender-system-streamlit-appapp-umjaad.streamlit.app/
 
 ```mermaid
 flowchart TD
@@ -31,4 +31,5 @@ flowchart TD
     style ProcessedData fill:#E5CCFF,stroke:#333,stroke-width:2px,color:#000
 
 
-App Link -> https://kailash-sou-movie-recommender-system-streamlit-appapp-umjaad.streamlit.app/
+
+
