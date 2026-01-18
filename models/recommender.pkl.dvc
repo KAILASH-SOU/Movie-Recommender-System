@@ -1,0 +1,5 @@
+outs:
+- md5: ecdf14fe5ca73c75b1a63122130e307b
+  size: 186906325
+  hash: md5
+  path: recommender.pkl
