@@ -13,10 +13,15 @@ flowchart TD
     DVC{DVC Pipeline}
     ProcessedData[Processed Data]
 
-    %% Connections
+    %% Core User Flow
     User --> Streamlit
     Streamlit --> Engine
     Engine --> Model
+    Model --> Engine
+    Engine --> Streamlit
+    Streamlit --> User
+
+    %% MLOps / Data Flow
     RawData --> DVC
     DVC --> ProcessedData
     ProcessedData --> Model
@@ -29,6 +34,7 @@ flowchart TD
     style RawData fill:#FFCC99,stroke:#333,stroke-width:2px,color:#000
     style DVC fill:#FFFF99,stroke:#333,stroke-width:4px,color:#000
     style ProcessedData fill:#E5CCFF,stroke:#333,stroke-width:2px,color:#000
+
 
 
 
