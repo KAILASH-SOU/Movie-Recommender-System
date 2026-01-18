@@ -1,32 +1,16 @@
-flowchart TB
-    %% User Layer
-    U[👤 User]
+```flowchart TD
+    %% User Interaction Flow
+    User[User] --> Streamlit[Streamlit UI]
+    Streamlit --> Engine[Recommendation Engine]
+    Engine --> Model[Trained Model]
 
-    %% Frontend
-    S[🎬 Streamlit UI<br/>streamlit_app/app.py]
+    %% Data Pipeline Flow
+    RawData[(TMDB Raw Data)] --> DVC{DVC Pipeline}
+    DVC --> ProcessedData[Processed Data]
+    ProcessedData --> Model
 
-    %% Backend Logic
-    R[🧠 Recommendation Engine<br/>TF-IDF + Cosine Similarity]
-
-    %% Model & Data
-    M[(📦 Trained Model<br/>recommender.pkl)]
-    D1[(📁 Raw Data<br/>TMDB CSVs)]
-    D2[(📁 Processed Data<br/>movies_cleaned.csv)]
-
-    %% MLOps
-    G[🐙 GitHub Repository]
-    DVC[DVC Pipeline<br/>ingest → preprocess → train]
-
-    %% Flow
-    U --> S
-    S --> R
-    R --> M
-
-    D1 --> DVC
-    DVC --> D2
-    D2 --> DVC
-    DVC --> M
-
-    G --> S
-    G --> R
-    G --> DVC
+    %% Styling
+    style RawData fill:#f9f,stroke:#333,stroke-width:2px
+    style Model fill:#bbf,stroke:#333,stroke-width:2px
+    style Streamlit fill:#dfd,stroke:#333,stroke-width:2px
+```
