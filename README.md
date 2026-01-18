@@ -30,3 +30,5 @@ flowchart TD
     style DVC fill:#FFFF99,stroke:#333,stroke-width:4px,color:#000
     style ProcessedData fill:#E5CCFF,stroke:#333,stroke-width:2px,color:#000
 
+
+App Link -> https://kailash-sou-movie-recommender-system-streamlit-appapp-umjaad.streamlit.app/
