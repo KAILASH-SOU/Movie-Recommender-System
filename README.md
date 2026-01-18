@@ -1,4 +1,8 @@
-```
+&lt;/pre&gt;
+
+
+
+```mermaid
 flowchart TD
     %% Nodes
     User[User]
@@ -17,7 +21,7 @@ flowchart TD
     DVC --> ProcessedData
     ProcessedData --> Model
 
-    %% Colors (Hex Codes)
+    %% Colors
     style User fill:#FF9999,stroke:#333,stroke-width:2px
     style Streamlit fill:#99FF99,stroke:#333,stroke-width:2px
     style Engine fill:#99FFFF,stroke:#333,stroke-width:2px
@@ -25,4 +29,3 @@ flowchart TD
     style RawData fill:#FFCC99,stroke:#333,stroke-width:2px
     style DVC fill:#FFFF99,stroke:#333,stroke-width:4px
     style ProcessedData fill:#E5CCFF,stroke:#333,stroke-width:2px
-```
