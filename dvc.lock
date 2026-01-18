@@ -1,0 +1,37 @@
+schema: '2.0'
+stages:
+  ingest:
+    cmd: python src/data/ingest.py
+    deps:
+    - path: data/raw/tmdb_5000_credits.csv
+      hash: md5
+      md5: 6c5e0e12bfbc527697d7977d86b97ed4
+      size: 40044293
+    - path: data/raw/tmdb_5000_movies.csv
+      hash: md5
+      md5: 64346a71897b5741d553d34b86088603
+      size: 5698602
+    - path: src/data/ingest.py
+      hash: md5
+      md5: 8d6845bd71378af0e6d51fe659694f81
+      size: 1237
+  preprocess:
+    cmd: python src/data/preprocess.py
+    deps:
+    - path: data/raw/tmdb_5000_credits.csv
+      hash: md5
+      md5: 6c5e0e12bfbc527697d7977d86b97ed4
+      size: 40044293
+    - path: data/raw/tmdb_5000_movies.csv
+      hash: md5
+      md5: 64346a71897b5741d553d34b86088603
+      size: 5698602
+    - path: src/data/preprocess.py
+      hash: md5
+      md5: 917de817fd4307ffa4b1b1992d62bd03
+      size: 1641
+    outs:
+    - path: data/processed/movies_cleaned.csv
+      hash: md5
+      md5: 3650613b3e4c59d0c1df941eac686a4f
+      size: 2353629

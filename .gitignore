@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Model artifacts (handled by DVC)
+models/*.pkl
+models/*.joblib
+
+# Data (handled by DVC)
+data/raw/*
+data/processed/*
+
+# DVC
+.dvc/cache
+.dvc/tmp
+
+# Docker
+*.tar
+
+# Streamlit
+.streamlit/
+
+# IDE
+.vscode/
+.idea/
